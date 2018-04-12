@@ -1,0 +1,25 @@
+.output-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  color: #fff;
+}
+
+.output-wrapper h2,
+.output-wrapper h3,
+.output-wrapper h4 {
+  margin: 0;
+}
+
+.output-wrapper {
+  font-size: 1.5rem;
+}
