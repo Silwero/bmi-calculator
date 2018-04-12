@@ -3,7 +3,18 @@ import './Range.css';
 
 export class Range extends Component {
   changeHandler = event => {
-    this.props.onChange(event.target.value, this.props.type);
+    let value = event.target.value;
+    value = value.replace(/[^0-9]/gi, '');
+
+    if (value > this.props.max) {
+      value = this.props.max;
+    }
+
+    if (!value || value === '0') {
+      value = 1;
+    }
+
+    this.props.onChange(value, this.props.type);
   }
 
   render() {
@@ -11,7 +22,7 @@ export class Range extends Component {
       <div className="Range">
         <div className="range-header">
           <h2>{this.props.label}:</h2>
-          {this.props.value}
+          <input type="text" onChange={this.changeHandler} value={this.props.value}/>
         </div>
         <input
           type="range"

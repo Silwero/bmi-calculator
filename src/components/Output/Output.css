@@ -14,6 +14,32 @@
   color: #fff;
 }
 
+.output-wrapper h2 {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.output-wrapper h3 {
+  font-size: 30px;
+  margin-bottom: 11px;
+}
+
+.output-wrapper.underweight {
+  color: #ffdc00;
+}
+
+.output-wrapper.normal {
+  color:  rgb(134, 175, 73);
+}
+
+.output-wrapper.overweight {
+  color:  #ff851b;
+}
+
+.output-wrapper.obese {
+  color:  #ff4136;
+}
+
 .output-wrapper h2,
 .output-wrapper h3,
 .output-wrapper h4 {
@@ -22,4 +48,24 @@
 
 .output-wrapper {
   font-size: 1.5rem;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 640px) {
+  .output-wrapper {
+    width: 250px;
+    height: 250px;
+    top: auto;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    padding-bottom: 110px;
+  }
+
+  .output-wrapper h2 {
+    font-size: 26px;
+  }
+
+  .output-wrapper h3 {
+    font-size: 20px;
+  }
 }

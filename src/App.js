@@ -18,14 +18,13 @@ class App extends Component {
       this.setState({
         ...this.state,
         height: val
-      });
+      }, this.setBmi);
     } else if (type === 'weight') {
       this.setState({
         ...this.state,
         weight: val
-      });
+      }, this.setBmi);
     }
-    this.setBmi();
   }
 
   setBmi() {
@@ -38,9 +37,9 @@ class App extends Component {
       return 'Underweight';
     } else if (bmi >=18.5 && bmi <= 24.9 ) {
       return 'Normal';
-    } else if (bmi >=25 && bmi <= 29.9 ) {
+    } else if (bmi >24.9 && bmi <= 29.9 ) {
       return 'Overweight';
-    } else if (bmi >= 30) {
+    } else if (bmi > 29.9) {
       return 'Obese';
     }
   }

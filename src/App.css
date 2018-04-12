@@ -34,7 +34,7 @@ body {
   flex-wrap: wrap;
   overflow: hidden;
   position: relative;
-  padding: 0 40px;
+  padding: 40px;
 }
 
 .App > div {
@@ -74,7 +74,7 @@ h1 {
   height: 300px;
   z-index: -1;
   border-radius: 50%;
-  box-shadow: 0 0 0 500px rgba(134, 175, 73, .8);
+  box-shadow: 0 0 0 500px rgba(134, 175, 73, .8), inset 3px 3px 12px 0px #000;
 }
 
 .col:first-child {
@@ -100,4 +100,48 @@ h1 {
   transform: translate(-50%, -50%);
   left: 0;
   margin-left: -10px;
+}
+
+@media (max-width: 640px) {
+  .App {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .App .col {
+    width: 100%;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .App .col:first-child {
+    margin-bottom: 60px;
+  }
+
+  .App .col::before {
+    display: none;
+  }
+
+  .row {
+    flex-wrap: wrap;
+    padding: 15px 15px 150px;
+    overflow: hidden;
+    border-radius: 25px;
+    min-height: 0;
+  }
+
+  .row::before {
+    content: '';
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 0 0 500px rgba(134, 175, 73, .8), inset 3px 3px 12px 0px #000;
+  }
 }
