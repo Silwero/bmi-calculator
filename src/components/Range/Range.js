@@ -17,12 +17,16 @@ export class Range extends Component {
     this.props.onChange(value, this.props.type);
   }
 
+  selectOnFocus = (e) => {
+    e.target.select();
+  }
+
   render() {
     return (
       <div className="Range">
         <div className="range-header">
           <h2>{this.props.label}:</h2>
-          <input type="text" onChange={this.changeHandler} value={this.props.value}/>
+          <input type="text" onFocus={this.selectOnFocus} onChange={this.changeHandler} value={this.props.value}/>
         </div>
         <input
           type="range"
